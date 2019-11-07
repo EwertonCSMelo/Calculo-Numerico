@@ -16,7 +16,7 @@ main()
 
     printf("%.1f",f(xn));
 
-    while (abs(f(xn))>0,00001)
+    while (abs(f(xn))>pow(10,-5))
     {   aux=xn;
         xn=secante(xn,xnAnt);
         xnAnt=aux;
