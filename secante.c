@@ -14,9 +14,7 @@ main()
     xnAnt=0.;
     xn=0.5;
 
-    printf("%.1f",f(xn));
-
-    while (abs(f(xn))>pow(10,-5))
+    while (sqrt(f(xn)*f(xn))>0.0001)
     {   aux=xn;
         xn=secante(xn,xnAnt);
         xnAnt=aux;
@@ -27,13 +25,11 @@ main()
 
 float f(float x)
 {
-    return pow(x,3)-9*x+5;
+    return fx;
 }
 
 float secante(float xn,float xnAnt)
 {
-
-     printf("%.1f %.1f\n",xn,xnAnt);
      return  xn - f(xn)*(xn-xnAnt)/(f(xn)-f(xnAnt));
 }
 
